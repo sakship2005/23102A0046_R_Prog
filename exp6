@@ -1,0 +1,270 @@
+
+R version 4.6.1 (2026-06-24 ucrt) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> for int i in 1:5) {print{i^2)}
+Error: unexpected symbol in "for int"
+> for (i in 1:5) {print{i^2)}
+Error: unexpected '{' in "for (i in 1:5) {print{"
+> for (i in 1:5) { print{i^2)}
+Error: unexpected '{' in "for (i in 1:5) { print{"
+> for ( i in 1:5 ) { print( i^2 ) }
+[1] 1
+[1] 4
+[1] 9
+[1] 16
+[1] 25
+> 
+> for ( i in c(2,4,6,7) ) { print(i^2) }
+[1] 4
+[1] 16
+[1] 36
+[1] 49
+> 
+> x=c(2,4,6,8,10,12)
+> excount=function(x) {
++ count=0
++ for(xval/2>3)
+Error: unexpected '/' in:
+"count=0
+for(xval/"
+> x=c(2,4,6,8,10,12)
+> excount=function(x) {
++ count=0
++ for(xval/2 > 3)
+Error: unexpected '/' in:
+"count=0
+for(xval/"
+> excount=function(x) {
++ count=0
++ if(xval/2 > 3) 
++ count = count=1
++ }
+> print(count)
+[1] 4
+> }
+Error: unexpected '}' in "}"
+> excount(x)
+Error in excount(x) : object 'xval' not found
+> 
+> child=c("child1","child2","child3")
+> sweet=c("sweet1","sweet2","sweet3")
+> for(x in child) {
++ for (y in sweet) {
++ print(paste(x,y))
++ }
++ }
+[1] "child1 sweet1"
+[1] "child1 sweet2"
+[1] "child1 sweet3"
+[1] "child2 sweet1"
+[1] "child2 sweet2"
+[1] "child2 sweet3"
+[1] "child3 sweet1"
+[1] "child3 sweet2"
+[1] "child3 sweet3"
+> 
+> for(x in child) {
++ for (y in sweet) {
++ print(paste(x,y))
++ }
++ }
+[1] "child1 sweet1"
+[1] "child1 sweet2"
+[1] "child1 sweet3"
+[1] "child2 sweet1"
+[1] "child2 sweet2"
+[1] "child2 sweet3"
+[1] "child3 sweet1"
+[1] "child3 sweet2"
+[1] "child3 sweet3"
+> 
+> drink=c("coffee", "lemoade", "tea", "juice")
+> for(x in drink) {
++ if(x == "tea") {
++ break
++ }
++ print(x)
++ }
+[1] "coffee"
+[1] "lemoade"
+> 
+> drink = c("coffee", "lemonade", "tea", "juice")
+> for (x in drink) {
++ if (x == "lemonade") {
++ next
++ }
++ print(x)
++ }
+[1] "coffee"
+[1] "tea"
+[1] "juice"
+> 
+> for (x in drink) {
++ if (x == "tea") {
++ next
++ }
++ print(x)
++ }
+[1] "coffee"
+[1] "lemonade"
+[1] "juice"
+> 
+> i=1
+> while(i<10) {
++ print(i^2)
++ i=i+2
++ }
+[1] 1
+[1] 9
+[1] 25
+[1] 49
+[1] 81
+> 
+> sumfunction=function(){
++ sum=0
++ number=as.integer(readline (prompt="Please select any number less than 25: "))
++ while(number <=25) {
++ sum=sum+number
++ number=number+1 }
++ print(paste("THe sum of numbers received from the while loop: ",sum))
++ }
+> 
+> sumfunction()
+Please select any number less than 25: Please
+Error in while (number <= 25) { : missing value where TRUE/FALSE needed
+In addition: Warning message:
+In sumfunction() : NAs introduced by coercion
+> 
+> Please select any number less than 25 : 22
+Error: unexpected symbol in "Please select"
+> sumfunction()
+Please select any number less than 25: 22
+[1] "THe sum of numbers received from the while loop:  94"
+> 22+23+24+25
+[1] 94
+> 
+> i=1
+> repeat{
++ print(i^2)
++ i=i+2
++ if ( i > 10 )
++ break
++ }
+[1] 1
+[1] 9
+[1] 25
+[1] 49
+[1] 81
+> 
+> i=1
+> repeat{
++ i=i+1
++ if(i<10) next
++ print(i^2)
++ if(i >=13) break
++ }
+[1] 100
+[1] 121
+[1] 144
+[1] 169
+> 
+> abc=function(x) {
++ x^2
++ }
+> abc(3)
+[1] 9
+> abc(9)
+[1] 81
+> 
+> abc=function(x,y) {
++ x^2+y^2
++ }
+> abc(3,4)
+[1] 25
+> abc(10,10)
+[1] 200
+> 
+> abc=function(x) {
++ sin(x)^2+cos(x)^2+x
++ }
+> abc(9)
+[1] 10
+> abc(99)
+[1] 100
+> abc= function() {
++ for(i in 1:3) {
++ print(i^3)
++ }
++ }
+> abc()
+[1] 1
+[1] 8
+[1] 27
+> 
+> seq()
+[1] 1
+> seq(from=1, to=1, 
++ by=((to-from)/(length.out-1)),
++ length.out=NULL, along.with=NULL, ...)
+Error: '...' used in an incorrect context
+> seq()
+[1] 1
+> seq(from = 1, to = 1, 
++ by = ((to - from)/(length.out - 1)), 
++ length.out = NULL, along.with = NULL, ...)
+Error: '...' used in an incorrect context
+> 
+> seq(from=2, to=4)
+[1] 2 3 4
+> seq(from=4, to=2)
+[1] 4 3 2
+> seq(from=-4, to=4)
+[1] -4 -3 -2 -1  0  1  2  3  4
+> 
+> seq(from=10, to=20, by=2)
+[1] 10 12 14 16 18 20
+> 
+> seq(from=20, to=10, by=-2)
+[1] 20 18 16 14 12 10
+> 
+>  seq(from=3, to=-2, by=-0.5
++  seq(from=3, to=-2, by=-0.5)
+Error: unexpected symbol in:
+" seq(from=3, to=-2, by=-0.5
+ seq"
+>  seq(from=3, to=-2, by=-0.5)
+ [1]  3.0  2.5  2.0  1.5  1.0  0.5  0.0 -0.5 -1.0 -1.5 -2.0
+> 
+> seq(to=10, length=10) 
+ [1]  1  2  3  4  5  6  7  8  9 10
+> 
+> seq(from=10, length=10)
+ [1] 10 11 12 13 14 15 16 17 18 19
+> 
+> seq(from=10, length=10, by=0.1)
+ [1] 10.0 10.1 10.2 10.3 10.4 10.5 10.6 10.7 10.8 10.9
+> 
+> seq(from=10, length=10, by=-2)
+ [1] 10  8  6  4  2  0 -2 -4 -6 -8
+> 
+> seq(from=10, length=5, by=-.2)
+[1] 10.0  9.8  9.6  9.4  9.2
+> 
