@@ -1,0 +1,260 @@
+
+R version 4.6.1 (2026-06-24 ucrt) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> print("The zero occurs at", 2*pi, "radians")
+Error in print.default("The zero occurs at", 2 * pi, "radians") : 
+  invalid 'quote' argument
+> print("The zero occurs at");print(2*pi);print("radians")
+[1] "The zero occurs at"
+[1] 6.283185
+[1] "radians"
+> print9"The zero occurs at");print(2*pi);print("radians")
+Error: unexpected string constant in "print9"The zero occurs at""
+> print("The zero occurs at");print(2*pi);print("radians")
+[1] "The zero occurs at"
+[1] 6.283185
+[1] "radians"
+> cat("The zero occurs at",2*pi,radians.","\n")
+Error: unexpected string constant in "cat("The zero occurs at",2*pi,radians.",""
+> d=date()
+> cat("Today's date is:",d,"\n")
+Today's date is: Wed Sep 23 09:20:49 2026 
+> x=1:10
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> cat(x,sep=" ++ ")
+1 ++ 2 ++ 3 ++ 4 ++ 5 ++ 6 ++ 7 ++ 8 ++ 9 ++ 10> cat("\n")
+
+> cat(x,sep="/")
+1/2/3/4/5/6/7/8/9/10> x=1:10
+> x
+ [1]  1  2  3  4  5  6  7  8  9 10
+> x=7
+> cat("The square of",x,"is",x^2, "!\n")
+The square of 7 is 49 !
+> cat("the square root of",x," is approximately", format(sqrt(x),digits=3),"\n")
+the square root of 7  is approximately 2.65 
+> evenno=c(2,4,6,8,10)
+> evenno
+[1]  2  4  6  8 10
+> cat("The first few even numbers are:",evenno)
+The first few even numbers are: 2 4 6 8 10> cat(x, fill=2, labels=paste("(",letters[1:10],"):"))
+( a ): 7
+> paste(1:12)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12"
+> as.character(1:12)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12"
+> paste("Everybody","loves","R Programming")
+[1] "Everybody loves R Programming"
+> paste("Everybody","loves","R programming",sep="*")
+[1] "Everybody*loves*R programming"
+> paste("Everybody","loves","R Programming",sep="===")
+[1] "Everybody===loves===R Programming"
+> names=c("Prof, Singh","Mr. Venkat","Dr. Jha")
+> names
+[1] "Prof, Singh" "Mr. Venkat"  "Dr. Jha"    
+> paste(names,"is","a good","person")
+[1] "Prof, Singh is a good person" "Mr. Venkat is a good person" 
+[3] "Dr. Jha is a good person"    
+> names=c("Prof. Singh","Mr. Venkat","Dr Jha")
+> paste(names, "is","a good","person:,collapse=", and")
++ 
+
++ > names = c("Prof. Singh", "Mr. Venkat", "Dr. 
++ Jha")
+> paste(names, "is", "a good", "person.", 
++ collapse=", and ")
+[1] "Prof. Singh is a good person., and Mr. Venkat is a good person., and Dr. \nJha is a good person."
+> [1] "Prof. Singh is a good person., and Mr. 
+Error: unexpected '[' in "["
+> Venkat is a good person., and Dr. Jha is a good 
+Error: unexpected symbol in "Venkat is"
+> person."
++ aste(names, "is", "a good", "person.", 
+Error: unexpected string constant in:
+"person."
+aste(names, ""
+> collapse=", and ")
+Error: unexpected ')' in "collapse=", and ")"
+> [1] "Prof. Singh is a good person., and Mr. 
+Error: unexpected '[' in "["
+> Venkat is a good person., and Dr. Jha is a good 
+Error: unexpected symbol in "Venkat is"
+> person."
+
++ > aste(names, "is", "a good", "person.", 
++ collapse=", and ")
+Error in aste(names, "is", "a good", "person.", collapse = ", and ") : 
+  could not find function "aste"
+> [1] "Prof. Singh is a good person., and Mr. 
+Error: unexpected '[' in "["
+> Venkat is a good person., and Dr. Jha is a good 
+Error: unexpected symbol in "Venkat is"
+> paste(1,"is first",2,"is second",3,"is third",sep="#")
+[1] "1#is first#2#is second#3#is third"
+> paste(1,"is first ",2,"is second ",3, "is third",sep="#")
+[1] "1#is first #2#is second #3#is third"
+> paste(1,"is first",2," is second ",3,"is third",sep="#")
+[1] "1#is first#2# is second #3#is third"
+> x=paste("ex",1:5,sep="_")
+> x
+[1] "ex_1" "ex_2" "ex_3" "ex_4" "ex_5"
+> x[1]
+[1] "ex_1"
+> x[2]
+[1] "ex_2"
+> x[3]
+[1] "ex_3"
+> x[5]
+[1] "ex_5"
+> x=paste("Ex",1:5,sep="_", collapse="")
+> x[1]
+[1] "Ex_1Ex_2Ex_3Ex_4Ex_5"
+> x=paste("Ex",1:5,sep="_")
+> x
+[1] "Ex_1" "Ex_2" "Ex_3" "Ex_4" "Ex_5"
+> paste(1:10)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"
+> paste(1:10)
+ [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10"
+> paste0(1:10,c("st","nd","rd",rep("th",7)))
+ [1] "1st"  "2nd"  "3rd"  "4th"  "5th"  "6th"  "7th"  "8th"  "9th"  "10th"
+> paste(1:10,c("st","nd","rd",rep("th",7)))
+ [1] "1 st"  "2 nd"  "3 rd"  "4 th"  "5 th"  "6 th"  "7 th"  "8 th"  "9 th"  "10 th"
+> x="The&!syntax&!of&!paste&!is!&available!&inthe online-help"
+> x
+[1] "The&!syntax&!of&!paste&!is!&available!&inthe online-help"
+> strsplit(x, split="!") 
+[[1]]
+[1] "The&"               "syntax&"            "of&"                "paste&"            
+[5] "is"                 "&available"         "&inthe online-help"
+
+>  x = "The&!syntax&!of&!paste&!is!&available! 
++ &inthe online-help" 
+> x
+[1] "The&!syntax&!of&!paste&!is!&available! \n&inthe online-help"
+> strsplit(x,split="&!")
+[[1]]
+[1] "The"                                 "syntax"                             
+[3] "of"                                  "paste"                              
+[5] "is!&available! \n&inthe online-help"
+
+> x = "The&!syntax&!of&!paste&!is!&available! 
++ &inthe online-help"
+> x
+[1] "The&!syntax&!of&!paste&!is!&available! \n&inthe online-help"
+> y = strsplit(x, split = "!&")
+> 
+> y
+[[1]]
+[1] "The&!syntax&!of&!paste&!is"      "available! \n&inthe online-help"
+
+> y[[1]][1]
+[1] "The&!syntax&!of&!paste&!is"
+> y[[1]][2]
+[1] "available! \n&inthe online-help"
+> y[[1]][3]
+[1] NA
+>  dates = c("2020-07-24", "2021-08-25", "2022-
++ 09-26", "2023-10-27")
+>  datesplt = strsplit(dates, "-")
+> datesplt
+[[1]]
+[1] "2020" "07"   "24"  
+
+[[2]]
+[1] "2021" "08"   "25"  
+
+[[3]]
+[1] "2022" "\n09" "26"  
+
+[[4]]
+[1] "2023" "10"   "27"  
+
+>  datemat = matrix(unlist(datesplt), nrow = 4, 
++ ncol=3, byrow=TRUE)
+>  datemat
+     [,1]   [,2]   [,3]
+[1,] "2020" "07"   "24"
+[2,] "2021" "08"   "25"
+[3,] "2022" "\n09" "26"
+[4,] "2023" "10"   "27"
+> datematrix=matrix(as.numeric(unlist(datesplt)),nrow=4,ncol=3,byrow=TRUE)
+> datematrix
+     [,1] [,2] [,3]
+[1,] 2020    7   24
+[2,] 2021    8   25
+[3,] 2022    9   26
+[4,] 2023   10   27
+> strsplit("shalabh","split="")
++ [[1]]
+
++ > x="R course 24.07.2022'
++ x="R course 24.07.2022"
+Error: unexpected symbol in:
+"x="R course 24.07.2022'
+x="R"
+> y="Number of participants: 25"
+> nchar(x) #Count the number of characters in x
+[1] 58
+> nchar(y) # xount the numer if characters in y
+[1] 26
+> x="R course 24.07.2022"
+> y="Number of participants: 25
++ y="Number of participants: 25"
+Error: unexpected symbol in:
+"y="Number of participants: 25
+y="Number"
+> y="Number of participants: 25"
+> nzchar(x)
+[1] TRUE
+> nzchar(y)
+[1] TRUE
+> nxchar(x)
+Error in nxchar(x) : could not find function "nxchar"
+> x
+[1] "R course 24.07.2022"
+> nzchar(x)
+[1] TRUE
+> y=c("apple","","cake")
+> y
+[1] "apple" ""      "cake" 
+> nzchar(y)
+[1]  TRUE FALSE  TRUE
+> x=c("apple","banana","cake")
+> nchar(x)
+[1] 5 6 4
+> y=c(2,4,6)
+> nchar(y)
+[1] 1 1 1
+> z=c(11,222,3333)
+> nchar(z)
+[1] 2 3 4
+> z1=c(1.1,2.22,3.333)
+> nchar(z1)
+[1] 3 4 5
+> x="R course will start from 24.07.2022"
+> toupper(x)
+[1] "R COURSE WILL START FROM 24.07.2022"
+> z="Indian institute of technology"
+> tolower(z)
+[1] "indian institute of technology"
+> 
