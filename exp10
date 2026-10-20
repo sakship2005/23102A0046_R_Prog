@@ -1,0 +1,353 @@
+
+R version 4.6.1 (2026-06-24 ucrt) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> y="Number of praticipants: 25"
+> sub("25","30",y)
+[1] "Number of praticipants: 30"
+> 
+> y="Mr. Singh is the smart one. Mr. Singh is funny, too"
+> y
+[1] "Mr. Singh is the smart one. Mr. Singh is funny, too"
+> sub("Mr. Singh","Professor Jha",y)
+[1] "Professor Jha is the smart one. Mr. Singh is funny, too"
+> gsub("Mr. Singh","Professor Jha",y)
+[1] "Professor Jha is the smart one. Professor Jha is funny, too"
+> sub("Mr. Singh","Professor Jha",y)
+[1] "Professor Jha is the smart one. Mr. Singh is funny, too"
+> 
+> str=c("R Course","exercises","include examples of R language")
+> grep("ex",str,value=T)
+[1] "exercises"                      "include examples of R language"
+> 
+> str=c("R course","exercises","include examples of R language")
+> grep("ex",str,value=F)
+[1] 2 3
+> 
+> str=c("R Course","exercises","include examples of r language","in R software")
+> grep9"R",str,ignore.case=F,value=T)
+Error: unexpected string constant in "grep9"R""
+> grep("R",str,ignore.case=F,value=T)
+[1] "R Course"      "in R software"
+> grep("R",str,ignore.case=T,value=T)
+[1] "R Course"                       "exercises"                     
+[3] "include examples of r language" "in R software"                 
+> grep("R",str,ignore.case=T,value=F)
+[1] 1 2 3 4
+> grep("R",str,ignore.case=F,value=F)
+[1] 1 4
+> x="R course 24.07.2021"
+> y="Number of particiapnts: 25"
+> c(x,y)
+[1] "R course 24.07.2021"        "Number of particiapnts: 25"
+> grep("our",c(x,y))
+[1] 1
+> 
+> x="R COurse 24.07.2022"
+> y="Number of particiapants: 50"
+> c(x,y)
+[1] "R COurse 24.07.2022"         "Number of particiapants: 50"
+> grep("Num",c(x,y))
+[1] 2
+> 
+> str=c("R course","exercises","include exmaples of R lanaguage")
+> grepl("R",str)
+[1]  TRUE FALSE  TRUE
+> 
+> str=c("R course","exercises","include exmaples of R language")
+> grep1("ex",str,value=T)
+Error in grep1("ex", str, value = T) : could not find function "grep1"
+> str
+[1] "R course"                       "exercises"                     
+[3] "include exmaples of R language"
+> grep1("R",str)
+Error in grep1("R", str) : could not find function "grep1"
+> 
+> library(MASS)
+> painters
+                Composition Drawing Colour Expression School
+Da Udine                 10       8     16          3      A
+Da Vinci                 15      16      4         14      A
+Del Piombo                8      13     16          7      A
+Del Sarto                12      16      9          8      A
+Fr. Penni                 0      15      8          0      A
+Guilio Romano            15      16      4         14      A
+Michelangelo              8      17      4          8      A
+Perino del Vaga          15      16      7          6      A
+Perugino                  4      12     10          4      A
+Raphael                  17      18     12         18      A
+F. Zucarro               10      13      8          8      B
+Fr. Salviata             13      15      8          8      B
+Parmigiano               10      15      6          6      B
+Primaticcio              15      14      7         10      B
+T. Zucarro               13      14     10          9      B
+Volterra                 12      15      5          8      B
+Barocci                  14      15      6         10      C
+Cortona                  16      14     12          6      C
+Josepin                  10      10      6          2      C
+L. Jordaens              13      12      9          6      C
+Testa                    11      15      0          6      C
+Vanius                   15      15     12         13      C
+Bassano                   6       8     17          0      D
+Bellini                   4       6     14          0      D
+Giorgione                 8       9     18          4      D
+Murillo                   6       8     15          4      D
+Palma Giovane            12       9     14          6      D
+Palma Vecchio             5       6     16          0      D
+Pordenone                 8      14     17          5      D
+Tintoretto               15      14     16          4      D
+Titian                   12      15     18          6      D
+Veronese                 15      10     16          3      D
+Albani                   14      14     10          6      E
+Caravaggio                6       6     16          0      E
+Corregio                 13      13     15         12      E
+Domenichino              15      17      9         17      E
+Guercino                 18      10     10          4      E
+Lanfranco                14      13     10          5      E
+The Carraci              15      17     13         13      E
+Durer                     8      10     10          8      F
+Holbein                   9      10     16         13      F
+Pourbus                   4      15      6          6      F
+Van Leyden                8       6      6          4      F
+Diepenbeck               11      10     14          6      G
+J. Jordaens              10       8     16          6      G
+Otho Venius              13      14     10         10      G
+Rembrandt                15       6     17         12      G
+Rubens                   18      13     17         17      G
+Teniers                  15      12     13          6      G
+Van Dyck                 15      10     17         13      G
+Bourdon                  10       8      8          4      H
+Le Brun                  16      16      8         16      H
+Le Suer                  15      15      4         15      H
+Poussin                  15      17      6         15      H
+> 
+> rownames(painters)
+ [1] "Da Udine"        "Da Vinci"        "Del Piombo"      "Del Sarto"      
+ [5] "Fr. Penni"       "Guilio Romano"   "Michelangelo"    "Perino del Vaga"
+ [9] "Perugino"        "Raphael"         "F. Zucarro"      "Fr. Salviata"   
+[13] "Parmigiano"      "Primaticcio"     "T. Zucarro"      "Volterra"       
+[17] "Barocci"         "Cortona"         "Josepin"         "L. Jordaens"    
+[21] "Testa"           "Vanius"          "Bassano"         "Bellini"        
+[25] "Giorgione"       "Murillo"         "Palma Giovane"   "Palma Vecchio"  
+[29] "Pordenone"       "Tintoretto"      "Titian"          "Veronese"       
+[33] "Albani"          "Caravaggio"      "Corregio"        "Domenichino"    
+[37] "Guercino"        "Lanfranco"       "The Carraci"     "Durer"          
+[41] "Holbein"         "Pourbus"         "Van Leyden"      "Diepenbeck"     
+[45] "J. Jordaens"     "Otho Venius"     "Rembrandt"       "Rubens"         
+[49] "Teniers"         "Van Dyck"        "Bourdon"         "Le Brun"        
+[53] "Le Suer"         "Poussin"        
+> is.numeric(painters$School)
+[1] FALSE
+> is.numeric(painters$Drawing)
+[1] TRUE
+> is.factor(painters$School)
+[1] TRUE
+> is.factor(painters$Drawing)
+[1] FALSE
+> colnames(Painters)
+Error: object 'Painters' not found
+> colnames(painters)
+[1] "Composition" "Drawing"     "Colour"      "Expression"  "School"     
+> 
+> summary(painters)
+  Composition       Drawing          Colour        Expression         School  
+ Min.   : 0.00   Min.   : 6.00   Min.   : 0.00   Min.   : 0.000   A      :10  
+ 1st Qu.: 8.25   1st Qu.:10.00   1st Qu.: 7.25   1st Qu.: 4.000   D      :10  
+ Median :12.50   Median :13.50   Median :10.00   Median : 6.000   E      : 7  
+ Mean   :11.56   Mean   :12.46   Mean   :10.94   Mean   : 7.667   G      : 7  
+ 3rd Qu.:15.00   3rd Qu.:15.00   3rd Qu.:16.00   3rd Qu.:11.500   B      : 6  
+ Max.   :18.00   Max.   :18.00   Max.   :18.00   Max.   :18.000   C      : 6  
+                                                                  (Other): 8  
+> summary(painters$School)
+ A  B  C  D  E  F  G  H 
+10  6  6 10  7  4  7  4 
+> attach(painters)
+> summary(School)
+ A  B  C  D  E  F  G  H 
+10  6  6 10  7  4  7  4 
+> summary(Composition)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    8.25   12.50   11.56   15.00   18.00 
+> detach(painters)
+> summary(School)
+Error: object 'School' not found
+> subset(painters,School=='F')
+           Composition Drawing Colour Expression School
+Durer                8      10     10          8      F
+Holbein              9      10     16         13      F
+Pourbus              4      15      6          6      F
+Van Leyden           8       6      6          4      F
+> painters[painters[["School"]]=="F",]
+           Composition Drawing Colour Expression School
+Durer                8      10     10          8      F
+Holbein              9      10     16         13      F
+Pourbus              4      15      6          6      F
+Van Leyden           8       6      6          4      F
+> subset(painters,Composition<=6)
+              Composition Drawing Colour Expression School
+Fr. Penni               0      15      8          0      A
+Perugino                4      12     10          4      A
+Bassano                 6       8     17          0      D
+Bellini                 4       6     14          0      D
+Murillo                 6       8     15          4      D
+Palma Vecchio           5       6     16          0      D
+Caravaggio              6       6     16          0      E
+Pourbus                 4      15      6          6      F
+> subset(painters,School=="F",select=c(-3,-5))
+           Composition Drawing Expression
+Durer                8      10          8
+Holbein              9      10         13
+Pourbus              4      15          6
+Van Leyden           8       6          4
+> splitted=split(painters,painters$School)
+> splitted
+$A
+                Composition Drawing Colour Expression School
+Da Udine                 10       8     16          3      A
+Da Vinci                 15      16      4         14      A
+Del Piombo                8      13     16          7      A
+Del Sarto                12      16      9          8      A
+Fr. Penni                 0      15      8          0      A
+Guilio Romano            15      16      4         14      A
+Michelangelo              8      17      4          8      A
+Perino del Vaga          15      16      7          6      A
+Perugino                  4      12     10          4      A
+Raphael                  17      18     12         18      A
+
+$B
+             Composition Drawing Colour Expression School
+F. Zucarro            10      13      8          8      B
+Fr. Salviata          13      15      8          8      B
+Parmigiano            10      15      6          6      B
+Primaticcio           15      14      7         10      B
+T. Zucarro            13      14     10          9      B
+Volterra              12      15      5          8      B
+
+$C
+            Composition Drawing Colour Expression School
+Barocci              14      15      6         10      C
+Cortona              16      14     12          6      C
+Josepin              10      10      6          2      C
+L. Jordaens          13      12      9          6      C
+Testa                11      15      0          6      C
+Vanius               15      15     12         13      C
+
+$D
+              Composition Drawing Colour Expression School
+Bassano                 6       8     17          0      D
+Bellini                 4       6     14          0      D
+Giorgione               8       9     18          4      D
+Murillo                 6       8     15          4      D
+Palma Giovane          12       9     14          6      D
+Palma Vecchio           5       6     16          0      D
+Pordenone               8      14     17          5      D
+Tintoretto             15      14     16          4      D
+Titian                 12      15     18          6      D
+Veronese               15      10     16          3      D
+
+$E
+            Composition Drawing Colour Expression School
+Albani               14      14     10          6      E
+Caravaggio            6       6     16          0      E
+Corregio             13      13     15         12      E
+Domenichino          15      17      9         17      E
+Guercino             18      10     10          4      E
+Lanfranco            14      13     10          5      E
+The Carraci          15      17     13         13      E
+
+$F
+           Composition Drawing Colour Expression School
+Durer                8      10     10          8      F
+Holbein              9      10     16         13      F
+Pourbus              4      15      6          6      F
+Van Leyden           8       6      6          4      F
+
+$G
+            Composition Drawing Colour Expression School
+Diepenbeck           11      10     14          6      G
+J. Jordaens          10       8     16          6      G
+Otho Venius          13      14     10         10      G
+Rembrandt            15       6     17         12      G
+Rubens               18      13     17         17      G
+Teniers              15      12     13          6      G
+Van Dyck             15      10     17         13      G
+
+$H
+        Composition Drawing Colour Expression School
+Bourdon          10       8      8          4      H
+Le Brun          16      16      8         16      H
+Le Suer          15      15      4         15      H
+Poussin          15      17      6         15      H
+
+> is.data.frame(splitted$A)
+[1] TRUE
+> df1=data.frame(state=c("UP","MP","AP","JK"),popnsize=c(1000,2000,3000,4000))
+> df2=data.frame(state=c("UP","MP","AP","JK"),samplesize=c(100,200,300,400),surveycompleted=c("Yes","No","Yes","No"))
+> df1
+  state popnsize
+1    UP     1000
+2    MP     2000
+3    AP     3000
+4    JK     4000
+> df2
+  state samplesize surveycompleted
+1    UP        100             Yes
+2    MP        200              No
+3    AP        300             Yes
+4    JK        400              No
+> cbind(df1,df2)
+  state popnsize state samplesize surveycompleted
+1    UP     1000    UP        100             Yes
+2    MP     2000    MP        200              No
+3    AP     3000    AP        300             Yes
+4    JK     4000    JK        400              No
+> 
+> merge(d1,df2,by="state")
+Error: object 'd1' not found
+> merge(df1,df2,by="state")
+  state popnsize samplesize surveycompleted
+1    AP     3000        300             Yes
+2    JK     4000        400              No
+3    MP     2000        200              No
+4    UP     1000        100             Yes
+> 
+> df11=data.frame(state=c("UP","MP","AP","JK"),popnsize=c(1000,2000,3000,40000))
+> df22=data.frame(state=c("Bihar","Delhi","Punjab"),popnsize=c(100,200,300))
+> df11
+  state popnsize
+1    UP     1000
+2    MP     2000
+3    AP     3000
+4    JK    40000
+> df22
+   state popnsize
+1  Bihar      100
+2  Delhi      200
+3 Punjab      300
+> rbind(df11,df22)
+   state popnsize
+1     UP     1000
+2     MP     2000
+3     AP     3000
+4     JK    40000
+5  Bihar      100
+6  Delhi      200
+7 Punjab      300
+> 
